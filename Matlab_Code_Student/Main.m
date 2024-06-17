@@ -27,7 +27,7 @@ function Main
     
 %--------------------------------------------------------------------------
 
-% Initialisierung
+% Initialisierung test
 
 Initialisierung;
 
