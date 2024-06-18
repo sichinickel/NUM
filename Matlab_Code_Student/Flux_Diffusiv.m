@@ -32,6 +32,7 @@ temperatur_grad=temperatur_jump/dx;
 % Diffusiver Fluss
 if system==1                   % Euler-Equation
 %%%START_STUDENT
+    g_flux_diffusiv=zeros(nx+1,3);
 %%%END_STUDENT
 elseif system==2               % Navier-Stokes-Equation
 %%%START_STUDENT
