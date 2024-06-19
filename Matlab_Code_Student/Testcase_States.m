@@ -37,17 +37,12 @@ if testcase==1
     
 %%%START_STUDENT
 global kappa
-for ii=1:nx
-    if (ii/nx)<=0.5
-        r(ii)=0.44;
-        vx(ii)=0.71;
-        p(ii)=3.5;
-    else
-        r(ii)=0.52;
-        vx(ii)=0;
-        p(ii)=0.6;
-    end
-end
+        r(1)=0.44;
+        vx(1)=0.71;
+        p(1)=3.5;
+        r(2)=0.52;
+        vx(2)=0;
+        p(2)=0.6;
 ix= p.*vx;
 e= (p/(kappa-1))+0.5*r.*vx.^2;
 %%%END_STUDENT

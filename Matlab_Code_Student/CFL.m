@@ -21,7 +21,7 @@ function [dt]=CFL(w)
 % Zeitschrittberechnung
 soundspeed=Handle_Wavespeed(kappa,w(:,1),w(:,3));
 %%%START_STUDENT
-v_max = max(abs(w(:,3))+soundspeed);
+v_max = max(abs(w(:,3))+abs(soundspeed));
 global nx
 dx=1/nx;
 dtc=cfl*(dx/v_max);
