@@ -39,10 +39,10 @@ if testcase==1
 global kappa
         r(1)=0.44;
         vx(1)=0.71;
-        p(1)=3.5;
+        p(1)=3.50000;
         r(2)=0.52;
         vx(2)=0;
-        p(2)=0.6;
+        p(2)=0.60000;
 ix= p.*vx;
 e= (p/(kappa-1))+0.5*r.*vx.^2;
 %%%END_STUDENT
