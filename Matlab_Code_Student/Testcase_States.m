@@ -7,7 +7,6 @@ function Testcase_States
     % in-------------------------------------------------------------------
 
     global testcase              % Testcase (Anfangswertproblem)
-    global nx
     
     % out------------------------------------------------------------------
     

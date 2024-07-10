@@ -62,12 +62,12 @@ dt_animation         = 1;
 cfl=0.7;
 
 % Ende der Simulation:-----------------------------------------------------
-t_end=0.2;
+t_end=0.125;
 
 % Hinweis: Startzeit t=0
    
 % Simulationsgebiet:-------------------------------------------------------
-nx=400;
+nx=100;
 a=0;
 b=1;
 x_Jump=0.5;
