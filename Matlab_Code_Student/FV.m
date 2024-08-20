@@ -37,14 +37,14 @@ global beta                  % Parameter für Limiter
 % -------------------------------------------------------------------------
   
 %  Equation System:--------------------------------------------------------
-system=1;                                                                     
+system=2;                                                                     
 
 % Cartesian Euler system       = 1
 % Cartesian Navier system      = 2
 
 % Zeitliche Ordnung:-------------------------------------------------------
-order_time=1;
-order_space=1;
+order_time=2;
+order_space=2;
 
 limiter=3; % minmod = 1, sweby = 2, G-minmod = 3
 beta = 1.4; % Parameter für Sweby und G-minmod Limiter
@@ -67,7 +67,7 @@ t_end=0.125;
 % Hinweis: Startzeit t=0
    
 % Simulationsgebiet:-------------------------------------------------------
-nx=100;
+nx=400;
 a=0;
 b=1;
 x_Jump=0.5;

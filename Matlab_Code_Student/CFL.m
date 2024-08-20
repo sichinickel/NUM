@@ -21,18 +21,16 @@ function [dt]=CFL(w)
 % Zeitschrittberechnung
 soundspeed=Handle_Wavespeed(kappa,w(:,1),w(:,3));
 %%%START_STUDENT
-v_max = max(abs(w(:,3))+abs(soundspeed));
-global nx
-dx=1/nx;
+v_max = max(abs(w(:,2))+abs(soundspeed));
 dtc=cfl*(dx/v_max);
 %%%END_STUDENT
- 
 if system==1       % Euler
 %%%START_STUDENT
-dtd=dtc;
+dtd=cfl*(0.5*dx^2)/lambda;
 %%%END_STUDENT
 elseif system == 2 % Navier
 %%%START_STUDENT
+dtd =  0.5*dx^2/(lambda + (4/3)*v_max*mu);
 %%%END_STUDENT
 else 
    error('No such system implemented')

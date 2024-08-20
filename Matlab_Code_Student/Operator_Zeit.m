@@ -33,6 +33,11 @@ function [u,w]=Operator_Zeit(u,w,t,dt)
     % verbesserte Euler Cauchy Verfahren 
     
     %%%START_STUDENT
+    tstage = t;
+    stage =1;
+    
+    k1=trasport-source;
+    residuum=dt*k1;
     %%%END_STUDENT
     
  else
