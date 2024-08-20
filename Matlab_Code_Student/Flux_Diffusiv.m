@@ -36,6 +36,12 @@ if system==1                   % Euler-Equation
 %%%END_STUDENT
 elseif system==2               % Navier-Stokes-Equation
 %%%START_STUDENT
+    g_flux_diffusiv=zeros(nx+1,3);
+    tau = (4/3)*mu*temperatur_grad;
+    g_flux_0 = zeros(nx+1,1);
+    g_flux_diffusiv= [ g_flux_0...,
+                        -tau...,
+                        (-velocity_average.*tau) - (lambda*temperatur_grad)];
 %%%END_STUDENT
 else
     error('No such system implemented')

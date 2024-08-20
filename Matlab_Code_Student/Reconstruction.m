@@ -21,23 +21,26 @@ u_right=u;
 % Gradient links und rechts
 
 %%%START_STUDENT
+s_left= u(2:nx_ghost-1,:)-u(1:nx_ghost-2,:);
+s_right = u(3:nx_ghost,:)-u(2:nx_ghost-1,:);
 %%%END_STUDENT
 
 % Limitierung MINMOD
 
 %%%START_STUDENT
+slope = Limiter(s_left,s_right);
 %%%END_STUDENT
                              
 % Reconstruction to the right ---> u+
 
 %%%START_STUDENT
-u_right(2:nx_ghost-1,:)=     
+u_right(2:nx_ghost-1,:)= u(2:nx_ghost-1,:) + 0.5 * dx * slope;    
 %%%END_STUDENT
 
 % Reconstruction to the left  ---> u-
 
 %%%START_STUDENT
-u_left(2:nx_ghost-1,:)=
+u_left(2:nx_ghost-1,:)= u(2:nx_ghost-1,:) - 0.5 * dx * slope;
 %%%END_STUDENT
 
 end

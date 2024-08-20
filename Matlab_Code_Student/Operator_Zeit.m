@@ -34,10 +34,13 @@ function [u,w]=Operator_Zeit(u,w,t,dt)
     
     %%%START_STUDENT
     tstage = t;
-    stage =1;
-    
-    k1=trasport-source;
-    residuum=dt*k1;
+    stage = 1;
+    [transport_1, source_1] = Operator_Raum(u, w, tstage, stage);
+    u_praediktor = u - 0.5 * dt * (transport_1 - source_1);
+    [u_praediktor, w_praediktor] = Update(u_praediktor);
+    [transport, source] = Operator_Raum(u_praediktor, w_praediktor, tstage + 0.5*dt, stage);
+    k1 = transport - source;
+    residuum = dt*k1;
     %%%END_STUDENT
     
  else

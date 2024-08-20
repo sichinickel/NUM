@@ -37,14 +37,14 @@ global beta                  % Parameter für Limiter
 % -------------------------------------------------------------------------
   
 %  Equation System:--------------------------------------------------------
-system=2;                                                                     
+system=1;                                                                     
 
 % Cartesian Euler system       = 1
 % Cartesian Navier system      = 2
 
 % Zeitliche Ordnung:-------------------------------------------------------
-order_time=2;
-order_space=2;
+order_time=1;
+order_space=1;
 
 limiter=3; % minmod = 1, sweby = 2, G-minmod = 3
 beta = 1.4; % Parameter für Sweby und G-minmod Limiter
@@ -78,7 +78,7 @@ testcase=1;
 % Lax Shock Tube = 1
 
 % Fluss:-------------------------------------------------------------------
-riemann=1;
+riemann=2;
 
 % Lax-Friedrichs (global)  = 1
 % HLL                      = 2  
