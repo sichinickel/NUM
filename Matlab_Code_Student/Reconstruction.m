@@ -29,6 +29,7 @@ s_right = u(3:nx_ghost,:)-u(2:nx_ghost-1,:);
 
 %%%START_STUDENT
 slope = Limiter(s_left,s_right);
+slope = (1/dx) * slope;
 %%%END_STUDENT
                              
 % Reconstruction to the right ---> u+
