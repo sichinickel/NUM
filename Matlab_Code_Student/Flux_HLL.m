@@ -25,8 +25,8 @@ function [flux] = Flux_HLL(rho_l,rho_r,v_l,v_r,p_l,p_r)
 flux = zeros(nx+1,3);
 c_l=sqrt(kappa*p_l./rho_l);
 c_r=sqrt(kappa*p_r./rho_r);
-a_l(:)=min(v_l(:)-c_l(:),0);
-a_r(:)=max(v_r(:)+c_r(:),0);
+a_l=min(v_l(:)-c_l(:),0);
+a_r=max(v_r(:)+c_r(:),0);
 u_l =  [rho_l...,
         rho_l.*v_l...,
         (p_l/(kappa-1))+0.5*rho_l.*v_l.^2];
