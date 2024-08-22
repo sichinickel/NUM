@@ -21,8 +21,8 @@ global m_sum            %Auch Anzahl der Summenglieder, aber dieses mal andersru
 syms theta r tau
 
 %Values of Global Variables
-n_sum=10;
-m_sum=10;
+n_sum=5;
+m_sum=5;
 tau0=0;
 r0=0.5;
 theta0=pi;
@@ -33,7 +33,7 @@ A=zeros(n_sum, m_sum);
 for i=1:n_sum
     k(i,:)=besselzero(i-0.5, m_sum, 1);
     for kk=1:m_sum
-        A(i,kk)= A_int1(i-1) * A_int2(i-1, k(i,kk));
+        A(i,kk)= A_int1(i-1) + A_int2(i-1, k(i,kk));
     end
 end
 
@@ -50,5 +50,5 @@ T0=subs(T,tau,tau0);
 T1=subs(T0,r,r0);
 T2=subs(T0,theta,theta0);
 T3=subs(T1,theta,theta+pi);
-fplot(T1,[0 2*pi])
+fplot(T3,[0 2*pi])
 %fplot(T3,[0 2*pi])
