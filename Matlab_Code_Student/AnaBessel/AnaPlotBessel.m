@@ -21,11 +21,13 @@ global m_sum            %Auch Anzahl der Summenglieder, aber dieses mal andersru
 syms theta r tau
 
 %Values of Global Variables
-n_sum=10;
-m_sum=10;
+n_sum=5;
+m_sum=5;
 tau0=0;
 r0=0.5;
 theta0=pi;
+theta1=0;
+digits(5);
    
 %Bestimmung der Koeffizienten
 k=zeros(n_sum, m_sum);
@@ -44,11 +46,31 @@ for n=1:n_sum
         T=T+T_funk(n-1, m, k(n,m), A(n,m), theta, r, tau);
     end
 end
-
+%%
 %Potten der Ergebnisse
+hold on
 T0=subs(T,tau,tau0);
 T1=subs(T0,r,r0);
-T2=subs(T0,theta,theta0);
-T3=subs(T1,theta,theta+pi);
-fplot(T1,[0 2*pi])
-%fplot(T3,[0 2*pi])
+T4=subs(T,r,r0);
+T2=subs(T4,theta,theta0);
+T3=subs(T4,theta,theta1);
+figure(1)
+fplot(T1,[0 pi])
+xlabel('\vartheta')
+ylabel('\theta')
+figure(2)
+fplot(T2,[0 1])
+xlabel('\tau')
+ylabel('\Theta')
+figure(3)
+fplot(T3,[0 1])
+xlabel('\tau')
+ylabel('\Theta')
+hold off
+%% Konturplot
+figure(4)
+tau1=0.025;
+tau2=0.05;
+T0=subs(T,tau,tau1);
+T1=subs(T,tau,tau2);
+fsurf(T0)
